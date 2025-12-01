@@ -64,8 +64,16 @@ checkBtn.addEventListener("click", () => {
       result.textContent = `Fel igen! Rätt svar: ${currentTree.name}`;
       setTimeout(newRound, 2000);
     }
+    const skipBtn = document.getElementById("skipBtn");
+
+skipBtn.addEventListener("click", () => {
+  result.textContent = "Du hoppade över!"; 
+  setTimeout(newRound, 500);  
+});
+
   }
 });
 
 // Starta spelet direkt
 newRound();
+
