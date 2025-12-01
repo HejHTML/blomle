@@ -2,6 +2,14 @@ const imageBox = document.getElementById("image");
 const guessInput = document.getElementById("guess");
 const checkBtn = document.getElementById("checkBtn");
 const result = document.getElementById("result");
+const skipBtn = document.getElementById("skipBtn");
+
+// Hoppa över-knappen
+skipBtn.addEventListener("click", () => {
+  result.textContent = "Du hoppade över!";
+  setTimeout(newRound, 500);
+});
+
 
 // Lista med växter (namn och bild)
 let fruitTrees = [
@@ -64,16 +72,10 @@ checkBtn.addEventListener("click", () => {
       result.textContent = `Fel igen! Rätt svar: ${currentTree.name}`;
       setTimeout(newRound, 2000);
     }
-    const skipBtn = document.getElementById("skipBtn");
-
-skipBtn.addEventListener("click", () => {
-  result.textContent = "Du hoppade över!"; 
-  setTimeout(newRound, 500);  
-});
-
   }
 });
 
 // Starta spelet direkt
 newRound();
+
 
