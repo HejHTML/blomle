@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gissa växten</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Växtgissningsspel</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="card">
-    <div id="image" class="image"></div>
-    <input id="guess" type="text" placeholder="Gissa växten!">
+
+  <h1>Växtgissningsspel</h1>
+
+  <div id="image"></div>
+
+  <input type="text" id="guess" placeholder="Skriv växtens namn">
+
+  <div>
     <button id="checkBtn">Gissa</button>
     <button id="skip-btn">Hoppa över</button>
-    <p id="result"></p>
   </div>
-  <script src="script.js"></script>
+
+  <div id="result"></div>
+
+  <div id="stats">
+    Poäng: <span id="score">0</span> | Bilder kvar idag: <span id="imagesLeft">3</span>
+  </div>
+
 </body>
 </html>
-
-
