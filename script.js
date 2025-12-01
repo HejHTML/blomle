@@ -2,6 +2,12 @@ const imageBox = document.getElementById("image");
 const guessInput = document.getElementById("guess");
 const checkBtn = document.getElementById("checkBtn");
 const result = document.getElementById("result");
+const skipBtn = document.getElementById("skip-Btn");
+
+skipBtn.addEventListener("click", () => {
+  result.textContent = "Du hoppade över!";
+  setTimeout(newRound, 500);
+});
 
 
 // Lista med växter (namn och bild)
