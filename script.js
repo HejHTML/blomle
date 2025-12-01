@@ -2,7 +2,7 @@ const imageBox = document.getElementById("image");
 const guessInput = document.getElementById("guess");
 const checkBtn = document.getElementById("checkBtn");
 const result = document.getElementById("result");
-const skipBtn = document.getElementById("skip-Btn");
+const skipBtn = document.getElementById("skip-btn");
 
 skipBtn.addEventListener("click", () => {
   result.textContent = "Du hoppade över!";
@@ -76,6 +76,7 @@ checkBtn.addEventListener("click", () => {
 
 // Starta spelet direkt
 newRound();
+
 
 
 
