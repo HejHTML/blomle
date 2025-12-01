@@ -51,7 +51,7 @@ input[type="text"] {
 }
 
 button {
-  padding: 10px 20px;
+  padding: 10px 10px;
   font-size: 16px;
   margin: 5px 0;
   border: none;
@@ -77,4 +77,5 @@ button:hover {
   margin-top: 15px;
   font-size: 16px;
 }
+
 
