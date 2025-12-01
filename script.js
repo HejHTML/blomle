@@ -2,13 +2,6 @@ const imageBox = document.getElementById("image");
 const guessInput = document.getElementById("guess");
 const checkBtn = document.getElementById("checkBtn");
 const result = document.getElementById("result");
-const skipBtn = document.getElementById("skipBtn");
-
-// Hoppa över-knappen
-skipBtn.addEventListener("click", () => {
-  result.textContent = "Du hoppade över!";
-  setTimeout(newRound, 500);
-});
 
 
 // Lista med växter (namn och bild)
@@ -77,5 +70,6 @@ checkBtn.addEventListener("click", () => {
 
 // Starta spelet direkt
 newRound();
+
 
 
