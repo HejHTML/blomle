@@ -3,14 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gissa växten</title>
+  <title>Växtgissningsspel</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>Gissa växten</h1>
+  <h1>Växtgissningsspel</h1>
 
-  <div class="card" id="image">
+  <!-- Bild-card -->
+  <div class="card" id="image"></div>
+
+  <!-- Input och knappar-card -->
+  <div class="card">
     <input type="text" id="guess" placeholder="Skriv växtens namn">
     <div class="buttons">
       <button id="checkBtn">Gissa</button>
@@ -18,13 +22,13 @@
     </div>
   </div>
 
+  <!-- Resultat och poäng -->
   <div id="result"></div>
-
   <div id="stats">
     Poäng: <span id="score">0</span> | Bilder kvar idag: <span id="imagesLeft">3</span>
   </div>
 
+  <!-- JS -->
+  <script src="script.js"></script>
 </body>
 </html>
-
-
