@@ -35,10 +35,6 @@ h1 {
   margin-bottom: 0;
 }
 
-#image:hover {
-  transform: scale(1.03);
-}
-
 input[type="text"] {
   padding: 8px;
   font-size: 16px;
@@ -81,3 +77,4 @@ button:hover {
   margin-top: 15px;
   font-size: 16px;
 }
+
