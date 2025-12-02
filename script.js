@@ -106,10 +106,11 @@ skipBtn.addEventListener("click", () => {
   localStorage.setItem("dailyData", JSON.stringify(dailyData));
   updateUI();
   result.textContent = "Du hoppade över!";
-  setTimeout(newRound, 3);
+  setTimeout(newRound, 500);
 });
 
 // Starta spelet
 updateUI();
 newRound();
+
 
