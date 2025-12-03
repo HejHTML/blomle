@@ -59,6 +59,14 @@ function showTree(tree) {
   guessesLeft = 3;
 }
 
+function preloadImages() {
+  fruitTrees.forEach(tree => {
+    const img = new Image();
+    img.src = tree.image;
+  });
+}
+preloadImages();
+
 // Ny runda
 function newRound() {
   if (dailyData.imagesLeft <= 0) {
@@ -117,6 +125,7 @@ skipBtn.addEventListener("click", () => {
 // Starta spelet
 updateUI();
 newRound();
+
 
 
 
