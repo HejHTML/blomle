@@ -71,9 +71,12 @@ function newRound() {
 
 // Kontrollera gissning
 checkBtn.addEventListener("click", () => {
+    if (dailyData.imagesLeft <= 0) {
+    result.textContent = "Du har inga gissningar kvar idag!";
+    return;
+    }
   const guess = guessInput.value.trim().toLowerCase();
   if (!currentTree || !guess) return;
-
   if (guess === currentTree.name.toLowerCase()) {
     score++;
    dailyData.imagesLeft = Math.max(0, dailyData.imagesLeft - 1);
@@ -114,6 +117,7 @@ skipBtn.addEventListener("click", () => {
 // Starta spelet
 updateUI();
 newRound();
+
 
 
 
