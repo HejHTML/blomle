@@ -33,9 +33,11 @@ let score = parseInt(localStorage.getItem("score")) || 0;
 // Hantera max 3 bilder per dag
 let today = new Date().toLocaleDateString();
 let dailyData = JSON.parse(localStorage.getItem("dailyData")) || { date: today, imagesLeft: 3 };
+let usedTrees = [];
 
 if (dailyData.date !== today) {
   dailyData = { date: today, imagesLeft: 3 };
+  usedTrees = [];
 }
 
 function startConfettiRain() {
@@ -98,8 +100,14 @@ function newRound() {
     result.textContent = "Du har redan gissat på dagens 3 bilder!";
     return;
   }
-  const tree = getRandomTree();
-  showTree(tree);
+// Filtrera bort redan använda träd
+const availableTrees = fruitTrees.filter(tree => !usedTrees.includes(tree));
+
+// Slumpa ett träd från tillgängliga
+const tree = availableTrees[Math.floor(Math.random() * availableTrees.length)];
+usedTrees.push(tree);
+
+showTree(tree);
 }
 
 // Kontrollera gissning
@@ -161,6 +169,7 @@ skipBtn.addEventListener("click", () => {
 // Starta spelet
 updateUI();
 newRound();
+
 
 
 
