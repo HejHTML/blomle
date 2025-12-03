@@ -110,9 +110,20 @@ checkBtn.addEventListener("click", () => {
     }
   const guess = guessInput.value.trim().toLowerCase();
   if (!currentTree || !guess) return;
-  if (guess === currentTree.name.toLowerCase()) {
+ if (guess === currentTree.name.toLowerCase()) {
     score++;
-   dailyData.imagesLeft = Math.max(0, dailyData.imagesLeft - 1);
+
+    // Kontrollera om detta var den sista bilden
+    const wasLastImage = (dailyData.imagesLeft === 1);
+
+    dailyData.imagesLeft = Math.max(0, dailyData.imagesLeft - 1);
+
+    // Starta konfetti om man klarade alla tre
+    if (wasLastImage) {
+        startConfettiRain();
+        result.textContent = "GRYM! Du klarade alla dagens bilder! 🎉";
+    }
+
     result.textContent = `Rätt! (${currentTree.name})`;
     localStorage.setItem("score", score);
     localStorage.setItem("dailyData", JSON.stringify(dailyData));
@@ -150,6 +161,7 @@ skipBtn.addEventListener("click", () => {
 // Starta spelet
 updateUI();
 newRound();
+
 
 
 
