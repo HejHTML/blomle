@@ -103,7 +103,8 @@ skipBtn.addEventListener("click", () => {
     result.textContent = "Du har redan gissat på dagens 3 bilder!";
     return;
   }
-  dailyData.imagesLeft--;
+ dailyData.imagesLeft = Math.max(0, dailyData.imagesLeft - 1);
+
   localStorage.setItem("dailyData", JSON.stringify(dailyData));
   updateUI();
   result.textContent = "Du hoppade över!";
@@ -113,6 +114,7 @@ skipBtn.addEventListener("click", () => {
 // Starta spelet
 updateUI();
 newRound();
+
 
 
 
