@@ -76,7 +76,7 @@ checkBtn.addEventListener("click", () => {
 
   if (guess === currentTree.name.toLowerCase()) {
     score++;
-    dailyData.imagesLeft--;
+   dailyData.imagesLeft = Math.max(0, dailyData.imagesLeft - 1);
     result.textContent = `Rätt! (${currentTree.name})`;
     localStorage.setItem("score", score);
     localStorage.setItem("dailyData", JSON.stringify(dailyData));
@@ -87,7 +87,8 @@ checkBtn.addEventListener("click", () => {
     if (guessesLeft > 0) {
       result.textContent = `Fel! Du har ${guessesLeft} försök kvar.`;
     } else {
-      dailyData.imagesLeft--;
+      dailyData.imagesLeft = Math.max(0, dailyData.imagesLeft - 1);
+
       result.textContent = `Fel igen! Rätt svar: ${currentTree.name}`;
       localStorage.setItem("dailyData", JSON.stringify(dailyData));
       updateUI();
@@ -112,5 +113,6 @@ skipBtn.addEventListener("click", () => {
 // Starta spelet
 updateUI();
 newRound();
+
 
 
