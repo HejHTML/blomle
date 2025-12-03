@@ -24,6 +24,12 @@ let fruitTrees = [
   { name: "Benved", image: "https://cdn.pixabay.com/photo/2022/01/04/06/23/euonymus-6914400_1280.jpg" },
   { name: "Blåsippa", image: "https://cdn.pixabay.com/photo/2018/04/18/08/59/flower-3329845_1280.jpg" },
   { name: "Snödroppe", image: "https://cdn.pixabay.com/photo/2016/01/28/16/18/spring-1166564_1280.jpg" },
+  { name: "Smörblomma", image:"https://cdn.pixabay.com/photo/2023/07/02/07/20/buttercup-8101494_1280.jpg"},
+    { name: "Höstanemon", image:"https://cdn.pixabay.com/photo/2017/08/13/18/22/fall-anemone-2638119_1280.jpg"},
+    { name: "Kungsängslilja", image:"https://cdn.pixabay.com/photo/2019/04/08/14/22/lily-4112098_1280.jpg"},
+    { name: "Viol", image:"https://cdn.pixabay.com/photo/2022/04/02/12/29/violets-7106922_1280.jpg"},
+    { name: "Vitsippa", image:"https://cdn.pixabay.com/photo/2017/07/21/17/07/woodanemone-2526347_1280.jpg"},
+    { name: "Nypon", image:"https://cdn.pixabay.com/photo/2015/09/22/19/27/rose-hip-952326_1280.jpg"},
 ];
 
 let currentTree = null;
@@ -175,6 +181,7 @@ setTimeout(newRound, 500);
 // Starta spelet
 updateUI();
 newRound();
+
 
 
 
