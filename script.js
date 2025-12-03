@@ -38,6 +38,31 @@ if (dailyData.date !== today) {
   dailyData = { date: today, imagesLeft: 3 };
 }
 
+function startConfettiRain() {
+  const duration = 3000; // 3 sekunder regn
+  const end = Date.now() + duration;
+
+  (function frame() {
+    // Skjut konfetti från vänster och höger
+    confetti({
+      particleCount: 5,
+      spread: 60,
+      startVelocity: 30,
+      origin: { x: 0, y: Math.random() - 0.2 } 
+    });
+    confetti({
+      particleCount: 5,
+      spread: 60,
+      startVelocity: 30,
+      origin: { x: 1, y: Math.random() - 0.2 }
+    });
+
+    if (Date.now() < end) {
+      requestAnimationFrame(frame);
+    }
+  })();
+}
+
 // Uppdatera UI med poäng och bilder kvar
 function updateUI() {
   scoreEl.textContent = score;
@@ -125,6 +150,7 @@ skipBtn.addEventListener("click", () => {
 // Starta spelet
 updateUI();
 newRound();
+
 
 
 
