@@ -158,17 +158,24 @@ skipBtn.addEventListener("click", () => {
     result.textContent = "Du har redan gissat på dagens 3 bilder!";
     return;
   }
- dailyData.imagesLeft = Math.max(0, dailyData.imagesLeft - 1);
+dailyData.imagesLeft = Math.max(0, dailyData.imagesLeft - 1);
 
-  localStorage.setItem("dailyData", JSON.stringify(dailyData));
-  updateUI();
-  result.textContent = "Du hoppade över!";
-  setTimeout(newRound, 500);
+// Lägg till det nuvarande trädet i usedTrees så det inte dyker upp igen
+if (currentTree) {
+  usedTrees.push(currentTree);
+}
+
+localStorage.setItem("dailyData", JSON.stringify(dailyData));
+updateUI();
+result.textContent = "Du hoppade över!";
+setTimeout(newRound, 500);
+
 });
 
 // Starta spelet
 updateUI();
 newRound();
+
 
 
 
